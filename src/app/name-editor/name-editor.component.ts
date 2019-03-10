@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
+// import { FormControl } from '@angular/forms';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-name-editor',
@@ -7,26 +8,35 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./name-editor.component.css']
 })
 export class NameEditorComponent implements OnInit {
-  name = new FormControl('');
-  last_name = new FormControl('');
-  nickname = new FormControl('');
-  email = new FormControl('');
+  // first_name = new FormControl('');
+  // last_name = new FormControl('');
+  // nickname = new FormControl('');
+  // email = new FormControl('');
   // bookclub = new FormControl('');
-  name_placeholder = 'John';
-  last_name_placeholder = 'Smith';
-  nickname_placeholder = 'jsmith1985';
-  email_placeholder = 'jsmith@yahoo.com';
+  // first_name_placeholder = 'John';
+  // last_name_placeholder = 'Smith';
+  // nickname_placeholder = 'jsmith1985';
+  // email_placeholder = 'jsmith@yahoo.com';
   // bookclub_placeholder = 'spring_2019';
 
-  constructor() { }
-    ngOnInit() {
-  }
+  @Input() firstName: string;
+  @Input() lastName: string;
+  @Input() nickName: string;
+  @Input() email: string;
+  @Input() bookClub: string;
 
-  updateInfo() {
-    this.name.setValue('');
-    this.last_name.setValue('');
-    this.email.setValue('');
-    this.nickname.setValue('');
-    // this.bookclub.setValue('');
+  constructor(private _myService: UserService) { }
+      ngOnInit() {
   }
+  onSubmit(){
+    console.log('You submitted: ' + this.firstName + ' ' + this.lastName + ' ' + this.nickName + ' ' + this.email + ' ' + this.bookClub);
+    this._myService.addUsers (this.firstName , this.lastName, this.nickName, this.email, this.email);
+  }
+  // updateInfo() {
+    // this.first_name.setValue('');
+    // this.last_name.setValue('');
+    // this.email.setValue('');
+    // this.nickname.setValue('');
+    // this.bookclub.setValue('');
+  // }
 }

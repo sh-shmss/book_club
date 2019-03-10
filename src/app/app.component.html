@@ -11,6 +11,14 @@
        </div>
        <div class="item2">
           <h2>
+              Existing users retieved from the server:
+          </h2>
+          <div>
+              <ul *ngFor ="let user of users let i = index">
+                <li> {{user.id}}: {{user.firstName}}, {{user.lastName}}, {{user.nickName}}, {{user.email}}, {{user.bookClub}}</li>
+              </ul>
+          </div>
+          <h2>
               {{nameForm}}
            </h2>
           <app-name-editor></app-name-editor>
