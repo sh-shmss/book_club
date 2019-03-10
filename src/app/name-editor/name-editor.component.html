@@ -1,0 +1,59 @@
+<div class="information_form">
+<p>
+  Enter your information to join the club:
+</p>
+<p>
+<label>
+  Name:
+  <input type="text" [formControl]="name" [placeholder]='name_placeholder'>
+</label>
+</p>
+<p>
+<label>
+  Last Name:
+  <input type="text" [formControl]="last_name" [placeholder]='last_name_placeholder'>
+</label>
+</p>
+<p>
+  <label>
+    Nickname:
+    <input type="text" [formControl]="nickname" [placeholder]='nickname_placeholder'>
+  </label>
+  </p>
+  <p>
+      <label>
+        Email:
+        <input type="text" [formControl]="email" [placeholder]='email_placeholder'>
+      </label>
+      </p>
+  <p>
+  <label>
+    Book Club to Join:
+    <input type="text" [(ngModel)]="bookclub" [placeholder]="">
+  </label>
+  </p>
+  <p>
+    <button class="button" (click)="updateInfo()">Reset</button>
+  </p>
+  <p>
+    Name: {{name.value}}
+  </p>
+  <p>
+    Last Name: {{last_name.value}}
+  </p>
+  <p>
+    Nickname: {{nickname.value}}
+  </p>
+  <p>
+      Email: {{email.value}}
+    </p>
+  <p>
+    Book Club: {{bookclub}}
+  </p>
+  <p>
+    Is the information correct?
+  </p>
+  <p>
+    <button class="button">Yes, go ahead.</button>
+  </p>
+</div>
