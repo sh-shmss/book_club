@@ -7,7 +7,7 @@ import { UserService } from './user.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'IT6203 IT Design Studio - Individual Component';
+  title = 'Bookclub Web Application - Component 1: Users';
   nameForm = 'Registration Form';
     //declare variable to hold response and make it public to be accessible from components.html
     public users;
@@ -25,5 +25,9 @@ export class AppComponent {
         () => console.log('finished loading')
       );
     }
+    onDelete(suserId: string) {
+      this._myService.deleteUser(suserId);
+    }
+
 
 }
