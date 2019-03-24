@@ -1,46 +1,40 @@
-
-          <!-- <h3>{{ mode }}</h3> -->
+          <!-- <h3>{{ mode }}</h3>
           <div id="edit" style="display: none">
           <ng-container *ngFor ="let user of users let i = index">
               <ng-container *ngIf="user._id == id">
           <form (ngSubmit)="onSubmit()" #myForm="ngForm">
             <mat-form-field >
-              <mat-label>{{user.firstName}}</mat-label>
               <input matInput placeholder="First Name" id="firstname" [(ngModel)]="firstName" name="firstname" >
             </mat-form-field>
             <br>
             <mat-form-field >
-              <mat-label>{{user.lastName}}</mat-label>
               <input matInput placeholder="Last Name" id="lastname" [(ngModel)]="lastName" name="lastname" >
             </mat-form-field>
             <br>
             <mat-form-field >
-                <mat-label>{{user.nickName}}</mat-label>
                 <input matInput placeholder="Nickname" id="nickname" [(ngModel)]="nickName" name="nickname" >
             </mat-form-field>
             <br>
             <mat-form-field >
-                <mat-label>{{user.email}}</mat-label>
                 <input matInput placeholder="Email" id="lastname" [(ngModel)]="email" name="email" >
             </mat-form-field>
             <br>
             <mat-form-field>
-                <mat-label>{{user.bookClub}}</mat-label>
                 <input matInput placeholder="Bookclub" id="bookclub" [(ngModel)]="bookClub" name="bookclub" >
             </mat-form-field>
             <p>
               <button type="submit" mat-raised-button>Submit</button>
             </p>
-            <p>
-              <button type="button" mat-raised-button (click)="myForm.reset()">Reset</button>         <!-- Used https://angular.io/guide/forms as a reference for this line -->
-
-            </p>
           </form>
+          <p>
+              <button type="none" mat-raised-button (click)="buttonOnMouseOver(user)">Pre-Populate</button>
+          </p>
         </ng-container>
       </ng-container>
-          </div>
 
-          <div id="add">
+          </div> -->
+
+          <div>
     <form (ngSubmit)="onSubmit()" #myForm="ngForm">
       <mat-form-field >
         <input matInput  placeholder="First Name" id="firstname" [(ngModel)]=" firstName" name="firstname" >

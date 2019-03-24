@@ -29,7 +29,7 @@ export class NameEditorComponent implements OnInit {
     // console.log('You submitted: ' + this.firstName + ' ' + this.lastName + ' ' + this.nickName + ' ' + this.email + ' ' + this.bookClub);
     this._myService.addUsers (this.firstName , this.lastName, this.nickName, this.email, this.bookClub);
     // this.router.navigate(['/listUsers']);
-    window.location.replace('/listUsers');
+    window.location.replace('/listUsers'); //I referred to https://developer.mozilla.org/en-US/docs/Web/API/Location/reload to find this method.
     if(this.mode == 'edit')
     // alert ("Hi");
     this._myService.updateUser (this.id, this.firstName , this.lastName, this.nickName, this.email, this.bookClub);
@@ -38,12 +38,38 @@ export class NameEditorComponent implements OnInit {
     window.location.replace('/listUsers');
   }
 
-  constructor(private http:HttpClient, private _myService: UserService, private router: Router, public route: ActivatedRoute) { }
-  myFunction(){
-    this.x = document.getElementById("add");
-    this.y = document.getElementById("edit");
-    this.x.style.display = "none";
-    this.y.style.display = "block";
+  constructor(private _myService: UserService, private router: Router, public route: ActivatedRoute) { }
+  // myFunction(){
+  //   this.x = document.getElementById("add");
+  //   this.y = document.getElementById("edit");
+  //   this.x.style.display = "none";
+  //   this.y.style.display = "block";
+  //  }
+
+  // buttonOnMouseOver(x){
+  //   //  console.log (x)
+  //   this.firstName = x.firstName;
+  //   this.lastName = x.lastName;
+  //   this.nickName = x.nickName;
+  //   this.email = x.email;
+  //   this.bookClub = x.bookClub;
+  //  }
+
+   myFunction2(x){
+      for (var i = 0; i < x.length; i++){
+           if(x[i]._id == this.id) {
+              return i;
+      }
+    }
+   }
+
+   myFunction3(x){
+    //  console.log (x)
+    this.firstName = x.firstName;
+    this.lastName = x.lastName;
+    this.nickName = x.nickName;
+    this.email = x.email;
+    this.bookClub = x.bookClub;
    }
 
   ngOnInit(){
@@ -52,14 +78,14 @@ export class NameEditorComponent implements OnInit {
          { this.mode = 'edit'; /*request had a parameter _id */
            this.id = paramMap.get('_id');
           }
-       else {this.mode = 'add';
-           this.id = null;
-           this.firstName = '';
-           this.lastName = '';
-           this.nickName = '';
-           this.email = '';
-           this.bookClub = '';
-          }
+      //  else {this.mode = 'add';
+      //      this.id = null;
+      //      this.firstName = '';
+      //      this.lastName = '';
+      //      this.nickName = '';
+      //      this.email = '';
+      //      this.bookClub = '';
+      //     }
      });
      if (this.mode == 'edit') {
       //
@@ -68,12 +94,9 @@ export class NameEditorComponent implements OnInit {
             //read data and assign to public variable students
             data => { this.users = data},
             err => console.error(err),
-            () => console.log('finished loading')
+            () => this.myFunction3(this.users[this.myFunction2(this.users)])
       );
-        this.myFunction()
-
+        // this.myFunction()
       }
-
      }
-
 }

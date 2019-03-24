@@ -2,6 +2,8 @@
   text-align: center;
 }
 .item2 { grid-area: main;
+  text-align: center;
+
 }
 .item3 { grid-area: footer;
   text-align: center;
@@ -16,13 +18,13 @@
   display: grid;
   grid-template-areas:
   'header header header header header header'
-  'menu main main main main main'
+  'main main main main main main'
   'footer footer footer footer footer footer';
   grid-gap: 1px;
   background-color:rgb(168, 77, 77);
   padding: 2px;
   grid-template-rows: 150px 1fr 30px;
-  grid-template-columns: 100px 1fr;
+  /* grid-template-columns: 100px 1fr; */
 }
 
 .grid-container > div {
