@@ -15,7 +15,9 @@
         <p><a href="projects.html">Events</a></p>
      </div>
        <div class="item2">
-          <h2>
+          <app-navigation-menu></app-navigation-menu>
+          <router-outlet></router-outlet>
+          <!-- <h2>
               Existing users:
           </h2>
           <div class="existing_users">
@@ -29,7 +31,7 @@
                         <th>Bookclub</th>
                         <th>Action</th>
                     </tr>
-                  <ng-container *ngFor ="let user of users let i = index">
+                                    <ng-container *ngFor ="let user of users let i = index">
                     <tr><td>{{user.firstName}}</td> <td>{{user.lastName}}</td> <td>{{user.nickName}}</td><td>{{user.email}}</td><td>{{user.bookClub}}</td><td><button mat-raised-button (click)="onDelete(user._id)" style="float: right;">DELETE</button></td></tr>
                   </ng-container>
                 </tbody>
@@ -38,7 +40,7 @@
           <h2>
               {{nameForm}}
            </h2>
-          <app-name-editor></app-name-editor>
+          <app-name-editor></app-name-editor> -->
        </div>
        <div class="item3">Kennesaw State University</div>
     </div>

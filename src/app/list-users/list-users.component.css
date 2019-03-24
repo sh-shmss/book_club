@@ -1,0 +1,98 @@
+.item1 { grid-area: header;
+  text-align: center;
+}
+.item2 { grid-area: main;
+}
+.item3 { grid-area: footer;
+  text-align: center;
+}
+
+.item4 { grid-area: menu;
+  text-align: center;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-areas:
+  'header header header header header header'
+  'menu main main main main main'
+  'footer footer footer footer footer footer';
+  grid-gap: 1px;
+  background-color:rgb(168, 77, 77);
+  padding: 2px;
+  grid-template-rows: 150px 1fr 30px;
+  grid-template-columns: 100px 1fr;
+}
+
+.grid-container > div {
+  background-color: rgb(238, 224, 216);
+  padding: 3px 10px;
+  margin: 2px 0;
+}
+
+body{
+  padding: 10px;
+  margin: 10px;
+}
+
+h1{
+  font-family: Arial, Helvetica, monospace;
+  font-style: italic;
+}
+
+h2 {
+  font-style: oblique;
+  }
+
+.existing_users {
+  width: 50%;
+}
+
+#existing_users_table {
+	border: 1px none rgb(114, 14, 14);
+  border-collapse: collapse;
+	width: 100%;
+}
+
+#existing_users_table td,
+#existing_users_table th {
+	padding: 8px;
+	text-align: left;
+}
+
+#existing_users_table th {
+	padding-top: 12px;
+	padding-bottom: 12px;
+	padding-left: 5px;
+	text-align: center;
+	border: 1px none rgb(114, 14, 14);
+}
+
+
+#menu a:link,
+a:visited {
+	color: rgb(114, 14, 14);
+	color: rgb(114, 14, 14);
+	text-align: center;
+  text-decoration: none;
+  font-size: 115%;
+}
+
+#menu a:hover,
+a:active {
+	color: rgb(97, 12, 12);
+	font-weight: bold;
+}
+
+a:link,
+a:visited {
+	color: rgb(114, 14, 14);
+	color: rgb(114, 14, 14);
+	text-align: center;
+}
+
+a:hover,
+a:active {
+	color: rgb(97, 12, 12);
+}

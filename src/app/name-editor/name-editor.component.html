@@ -1,7 +1,49 @@
-<div>
+
+          <!-- <h3>{{ mode }}</h3> -->
+          <div id="edit" style="display: none">
+          <ng-container *ngFor ="let user of users let i = index">
+              <ng-container *ngIf="user._id == id">
+          <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+            <mat-form-field >
+              <mat-label>{{user.firstName}}</mat-label>
+              <input matInput placeholder="First Name" id="firstname" [(ngModel)]="firstName" name="firstname" >
+            </mat-form-field>
+            <br>
+            <mat-form-field >
+              <mat-label>{{user.lastName}}</mat-label>
+              <input matInput placeholder="Last Name" id="lastname" [(ngModel)]="lastName" name="lastname" >
+            </mat-form-field>
+            <br>
+            <mat-form-field >
+                <mat-label>{{user.nickName}}</mat-label>
+                <input matInput placeholder="Nickname" id="nickname" [(ngModel)]="nickName" name="nickname" >
+            </mat-form-field>
+            <br>
+            <mat-form-field >
+                <mat-label>{{user.email}}</mat-label>
+                <input matInput placeholder="Email" id="lastname" [(ngModel)]="email" name="email" >
+            </mat-form-field>
+            <br>
+            <mat-form-field>
+                <mat-label>{{user.bookClub}}</mat-label>
+                <input matInput placeholder="Bookclub" id="bookclub" [(ngModel)]="bookClub" name="bookclub" >
+            </mat-form-field>
+            <p>
+              <button type="submit" mat-raised-button>Submit</button>
+            </p>
+            <p>
+              <button type="button" mat-raised-button (click)="myForm.reset()">Reset</button>         <!-- Used https://angular.io/guide/forms as a reference for this line -->
+
+            </p>
+          </form>
+        </ng-container>
+      </ng-container>
+          </div>
+
+          <div id="add">
     <form (ngSubmit)="onSubmit()" #myForm="ngForm">
       <mat-form-field >
-        <input matInput placeholder="First Name" id="firstname" [(ngModel)]=" firstName" name="firstname" >
+        <input matInput  placeholder="First Name" id="firstname" [(ngModel)]=" firstName" name="firstname" >
       </mat-form-field>
       <br>
       <mat-form-field >
@@ -25,75 +67,6 @@
       <p>
         <button type="button" mat-raised-button (click)="myForm.reset()">Reset</button>         <!-- Used https://angular.io/guide/forms as a reference for this line -->
 
-      </p>
+     </p>
     </form>
     </div>
-
-<!-- <div class="information_form">
-<p>
-  Enter your information to join the club:
-</p>
-<p>
-<label>
-  First name:
-  <input matInput type="text" [formControl]="first_name" [placeholder]='first_name_placeholder'>
-</label>
-</p>
-<p>
-<label>
-  Last name:
-  <input type="text" [formControl]="last_name" [placeholder]='last_name_placeholder'>
-</label>
-</p>
-<p>
-  <label>
-    Nickname:
-    <input type="text" [formControl]="nickname" [placeholder]='nickname_placeholder'>
-  </label>
-  </p>
-  <p>
-      <label>
-        Email:
-        <input type="text" [formControl]="email" [placeholder]='email_placeholder'>
-      </label>
-  </p>
-  <p>
-      <label>
-        Bookclub:
-        <input type="text" [formControl]="bookclub" [placeholder]='bookclub_placeholder'>
-      </label>
-  </p> -->
-  <!-- <p>
-  <label>
-    Book Club to Join:
-    <input type="text" [(ngModel)]="bookclub" [placeholder]="">
-  </label>
-  </p> -->
-  <!-- <p>
-    <button class="button" (click)="updateInfo()">Reset</button>
-  </p>
-  <p>
-    First name: {{first_name.value}}
-  </p>
-  <p>
-    Last name: {{last_name.value}}
-  </p>
-  <p>
-    Nickname: {{nickname.value}}
-  </p>
-  <p>
-      Email: {{email.value}}
-  </p>
-  <p>
-      Bookclub: {{bookclub.value}}
-  </p> -->
-  <!-- <p>
-    Book Club: {{bookclub}}
-  </p> -->
-  <!-- <p>
-    Is the information correct?
-  </p>
-  <p>
-    <button type="submit" mat-raised-button class="button">Submit</button>
-  </p>
-</div> -->

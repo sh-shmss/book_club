@@ -66,5 +66,32 @@ app.delete("/users/:id", (req, res, next) => {
 });
 
 
+// serve incoming put requests to /users
+app.put('/users/:id', (req, res, next) => {
+  console.log("id: " + req.params.id)
+  // check that the parameter id is valid
+  if (mongoose.Types.ObjectId.isValid(req.params.id)) {
+    //find a document and set new first and last names
+    User.findOneAndUpdate({_id: req.params.id},
+      {$set:{firstName : req.body.firstName,
+        lastName : req.body.lastName, nickName : req.body.nickName,
+        email: req.body.email, bookClub: req.body.bookClub}},{new:true})
+     .then((user) => {
+        if (user) { //what was updated
+          console.log(user);
+        } else {
+          console.log("no data exist for this id");
+        }
+     })
+    .catch((err) => {
+      console.log(err);
+     });
+ } else {
+   console.log("please provide correct id");
+ }
+
+});
+
+
 //to use this middleware in other parts of the application
 module.exports=app;

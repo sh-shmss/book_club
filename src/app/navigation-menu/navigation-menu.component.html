@@ -1,0 +1,15 @@
+<div>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>expand_more</mat-icon>
+      <span>Menu</span>
+    </button>
+
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink = "/listUsers" >
+        <span>List Users</span>
+      </button>
+      <button mat-menu-item routerLink = "/addUser" >
+        <span>Add a New User</span>
+      </button>
+    </mat-menu>
+    </div>
