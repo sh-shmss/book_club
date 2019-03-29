@@ -1,0 +1,30 @@
+<div>
+  <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+    <mat-form-field >
+      <input matInput  placeholder="Club Name" id="firstname" [(ngModel)]= "clubName" name="firstname" >
+    </mat-form-field>
+    <br>
+    <mat-form-field >
+      <input matInput placeholder="Created on" id="lastname" [(ngModel)]= "createdOn" name="lastname" [disabled]="true">
+    </mat-form-field>
+    <br>
+    <mat-form-field >
+        <input matInput placeholder="Book Title" id="nickname" [(ngModel)]= "bookTitle" name="booktitle" >
+    </mat-form-field>
+    <br>
+    <mat-form-field >
+        <input matInput placeholder="Author" id="lastname" [(ngModel)]= "author" name="author" >
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Member(s)" id="members" [(ngModel)]= "members" name="member" [disabled]="true">
+    </mat-form-field>
+    <p>
+      <button type="submit" mat-raised-button>Submit</button>
+    </p>
+    <p>
+      <button type="button" mat-raised-button (click)="myForm.reset()">Reset</button>         <!-- Used https://angular.io/guide/forms as a reference for this line -->
+
+   </p>
+  </form>
+  </div>

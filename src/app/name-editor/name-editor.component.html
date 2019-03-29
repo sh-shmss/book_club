@@ -1,7 +1,7 @@
           <!-- <h3>{{ mode }}</h3>
           <div id="edit" style="display: none">
           <ng-container *ngFor ="let user of users let i = index">
-              <ng-container *ngIf="user._id == id">
+          <ng-container *ngIf="user._id == id">
           <form (ngSubmit)="onSubmit()" #myForm="ngForm">
             <mat-form-field >
               <input matInput placeholder="First Name" id="firstname" [(ngModel)]="firstName" name="firstname" >
@@ -53,7 +53,15 @@
       </mat-form-field>
       <br>
       <mat-form-field>
-          <input matInput placeholder="Bookclub" id="bookclub" [(ngModel)]=" bookClub" name="bookclub" >
+          <!-- <input matInput placeholder="Bookclub" id="bookclub" [(ngModel)]=" bookClub" name="bookclub" >
+      </mat-form-field><br>
+      <mat-form-field> -->
+        <mat-label>Book Club</mat-label>
+        <mat-select [(ngModel)]="bookClub" [ngModelOptions]="{standalone: true}">
+          <mat-option *ngFor="let club of clubs let i = index" [value]="club.clubName">
+            {{club.clubName}}
+          </mat-option>
+        </mat-select>
       </mat-form-field>
       <p>
         <button type="submit" mat-raised-button>Submit</button>

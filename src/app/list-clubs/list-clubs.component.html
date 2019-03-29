@@ -1,0 +1,20 @@
+<div>
+  <table id= "users">
+    <tbody>
+        <tr>
+            <th>Club Name</th>
+            <th>Created on</th>
+            <th>Book Title</th>
+            <th>Author</th>
+            <th>Members</th>
+            <th colspan="2">Action</th>
+        </tr>
+        <ng-container *ngFor ="let club of clubs let i = index">
+        <tr><td>{{club.clubName}}</td> <td>{{club.createdOn}}</td> <td>{{club.bookTitle}}</td><td>{{club.author}}</td><td>{{club.members}}</td>
+          <td><button mat-raised-button (click)="onDelete(club._id)" style="float: right;">DELETE</button></td>
+          <td><button mat-raised-button [routerLink]="['/editClub', club._id]">Udate</button></td></tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
+

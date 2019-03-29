@@ -15,6 +15,11 @@ import { NavigationMenuComponent } from './navigation-menu/navigation-menu.compo
 import { Routes, RouterModule } from '@angular/router';
 import { ListUsersComponent } from './list-users/list-users.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { ClubEditorComponent } from './club-editor/club-editor.component';
+import { ListClubsComponent } from './list-clubs/list-clubs.component';
+import { ClubService } from './club.service';
+import {MatSelectModule} from '@angular/material/select';
+
 
 const appRoutes: Routes = [ {
   path: '',                     //default component to display
@@ -28,7 +33,16 @@ const appRoutes: Routes = [ {
 },      {
    path: 'listUsers',       //when users listed
    component: ListUsersComponent
- },       {
+},       {
+  path: 'addClub',       //when users listed
+  component: ClubEditorComponent
+},       {
+  path: 'editClub/:_id',       //when users listed
+  component: ClubEditorComponent
+},       {
+  path: 'listClubs',       //when users listed
+  component: ListClubsComponent
+},       {
    path: '**',                 //when path cannot be found
    component: NotFoundComponent
  }
@@ -42,6 +56,8 @@ const appRoutes: Routes = [ {
     NavigationMenuComponent,
     ListUsersComponent,
     NotFoundComponent,
+    ClubEditorComponent,
+    ListClubsComponent,
     ],
   imports: [
     BrowserModule,
@@ -51,12 +67,18 @@ const appRoutes: Routes = [ {
     MatFormFieldModule,
     MatInputModule,
     MatButtonModule,
+    MatSelectModule,
     BrowserAnimationsModule,
     MatMenuModule,
     MatIconModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [UserService],
+  providers: [UserService,ClubService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+
+
+// key: m1fBr3Av6nUHKoStY6tA
+// secret: OxmObFmejN5FHQuEWoZP9mfZk1OVcjRQdL0Xq1ueZE

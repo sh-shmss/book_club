@@ -1,5 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { UserService } from '../user.service';
+import { ClubService } from '../club.service';
+
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
@@ -21,6 +23,8 @@ export class NameEditorComponent implements OnInit {
   private mode = 'add'; // default mode
   private id: string; // user ID
   public users;
+  public clubs;
+
   public x;
   public y;
 
@@ -38,7 +42,7 @@ export class NameEditorComponent implements OnInit {
     window.location.replace('/listUsers');
   }
 
-  constructor(private _myService: UserService, private router: Router, public route: ActivatedRoute) { }
+  constructor(private _myService: UserService, private _myService2: ClubService, private router: Router, public route: ActivatedRoute) { }
   // myFunction(){
   //   this.x = document.getElementById("add");
   //   this.y = document.getElementById("edit");
@@ -56,7 +60,7 @@ export class NameEditorComponent implements OnInit {
   //  }
 
    myFunction2(x){
-      for (var i = 0; i < x.length; i++){
+      for (let i = 0; i < x.length; i++){
            if(x[i]._id == this.id) {
               return i;
       }
@@ -98,5 +102,12 @@ export class NameEditorComponent implements OnInit {
       );
         // this.myFunction()
       }
+      this.x = this._myService2.getClubs ();
+      this._myService2.getClubs().subscribe(
+          //read data and assign to public variable students
+          data => { this.clubs = data},
+          err => console.error(err),
+          () => console.log ('Clubs loaded')
+      );
      }
 }
