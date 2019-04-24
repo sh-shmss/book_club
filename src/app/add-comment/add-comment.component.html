@@ -1,0 +1,65 @@
+      <div class="row">
+ 
+        <h3 class="textheader">Welcome to our book club comments section!!</h3>
+      <h3>{{mode}} comments section!</h3>
+        <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+  <table>
+    <tr>
+      <td>
+          <mat-form-field >
+              <input matInput placeholder="First Name" id="firstname"
+              [(ngModel)]=" firstName" name="firstname" >
+              </mat-form-field>
+      </td>
+    </tr> 
+    <tr>
+      <td>
+          
+              <mat-form-field >
+                  <input matInput placeholder="Last Name" id="lastname" [(ngModel)]="
+                  lastName" name="lastname" >
+              </mat-form-field>   
+      </td>
+    </tr>    
+    <tr>
+        <td>
+            
+                <mat-form-field >
+                    <input matInput placeholder="Name of the Book" id="bookname" [(ngModel)]="
+                    bookname" name="bookname" >
+                       
+                    </mat-form-field>             
+        </td>
+      </tr>
+  <tr>
+        <td>
+            
+                <mat-form-field class="textarea" >
+                    <textarea matInput placeholder="Enter your Comments" id="comment" [(ngModel)]="
+                    comment" name="comment"  ></textarea>
+                    </mat-form-field>
+            
+        </td>
+      </tr>
+<tr>
+  <td>
+      <p>
+          <button type="submit" mat-raised-button
+          color="primary">Submit</button>
+      </p>
+    </td>
+  <td>
+            <button (click)="reset()" mat-raised-button
+          color="primary">Cancel</button>   
+  </td>
+</tr>
+</table>
+           
+            </form>
+
+      </div>
+
+      
+    
+     
+        

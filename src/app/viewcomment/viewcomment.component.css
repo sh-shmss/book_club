@@ -1,0 +1,18 @@
+.text
+
+{
+    font-family:'Comic Sans';
+    font-size: medium;
+    font-weight: bold;
+color: darkblue;
+}
+
+.textheader
+
+{
+    font-family:'Comic Sans';
+    font-size: medium;
+    font-weight: bold;
+    font-style: italic;
+color: darkblue;
+}

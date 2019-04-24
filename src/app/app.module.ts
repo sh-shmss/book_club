@@ -19,6 +19,10 @@ import { ClubEditorComponent } from './club-editor/club-editor.component';
 import { ListClubsComponent } from './list-clubs/list-clubs.component';
 import { ClubService } from './club.service';
 import {MatSelectModule} from '@angular/material/select';
+import { AddCommentComponent } from './add-comment/add-comment.component';
+import { ViewcommentComponent } from './viewcomment/viewcomment.component';
+import { ListEventComponent } from './list-event/list-event.component';
+import { EventformComponent } from './eventform/eventform.component';
 
 
 const appRoutes: Routes = [ {
@@ -42,10 +46,35 @@ const appRoutes: Routes = [ {
 },       {
   path: 'listClubs',       //when users listed
   component: ListClubsComponent
-},       {
-   path: '**',                 //when path cannot be found
-   component: NotFoundComponent
+},        {
+ path: 'addcomment',
+ component: AddCommentComponent
+ },
+ {
+   path: 'edit/:_id',
+   component: AddCommentComponent
+   },
+{
+   path:'view',
+   component:ViewcommentComponent
  }
+
+ ,       {
+  path: 'addEvent',         //when events added
+  component: EventformComponent
+},       {
+ path: 'editEvent/:_id',         //when events edited
+ component: EventformComponent
+},          {
+  path: 'listEvent',       //when events listed
+  component: ListEventComponent
+} ,
+
+
+ {
+  path: '**',                 //when path cannot be found
+  component: NotFoundComponent
+},
 ];
 
 
@@ -58,6 +87,10 @@ const appRoutes: Routes = [ {
     NotFoundComponent,
     ClubEditorComponent,
     ListClubsComponent,
+    AddCommentComponent,
+    ViewcommentComponent,
+    ListEventComponent,
+    EventformComponent,
     ],
   imports: [
     BrowserModule,
@@ -71,7 +104,7 @@ const appRoutes: Routes = [ {
     BrowserAnimationsModule,
     MatMenuModule,
     MatIconModule,
-    RouterModule.forRoot(appRoutes),
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [UserService,ClubService],
   bootstrap: [AppComponent]

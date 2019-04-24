@@ -1,0 +1,22 @@
+
+<p class="textheader">Please see below for the comments posted!!!!</p>
+
+
+<div>
+    <ul *ngFor ="let comment of comments let i = index">
+        <li>
+            <p class="text">Our Book Club user </p>
+            {{comment.firstName}} {{comment.lastName}} 
+                <p class="text">  Posted the Comments as below:</p> 
+                {{comment.comment}} 
+            <p class="text">For the below Boook :</p>{{comment.bookname}}
+       
+       </li>  
+       <br>
+       <button mat-raised-button color="primary" [routerLink]="['/edit',comment._id]">UPDATE</button>&nbsp;
+       <button mat-raised-button color="warn" (click)="onDelete(comment._id)">DELETE</button>
+       
+        </ul>
+    
+</div>
+
