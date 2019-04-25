@@ -1,7 +1,7 @@
 <div id="parent">
-  <h2>{{mode}} Event</h2> 
+  <h2 class="text">{{mode}} Event</h2> 
   <form (ngSubmit) = "onSubmit()" #myForm="ngForm"> 
-    <h3>Event Details</h3>
+    <h3 >Event Details</h3>
    
     <p>
       <label>
@@ -104,6 +104,6 @@
         </p>
       </div> 
 
-    <button type="submit">Submit</button>
+    <button type="submit" mat-raised-button ="primary">Submit</button>
   </form> 
 </div> 

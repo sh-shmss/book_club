@@ -1,5 +1,5 @@
 
-*{ box-sizing: border-box; }
+*{ box-sizing: border-box;  }
 
 
 form{
@@ -11,7 +11,14 @@ form{
     background: #f4f7f8; 
     border-radius: 8px; 
 } 
+.text
 
+{
+    font-family:'Comic Sans';
+    font-size: x-large;
+    font-weight: bold;
+color: darkblue;
+}
 h3 {
     margin: 0 0 30px 0; 
     text-align: left; 
