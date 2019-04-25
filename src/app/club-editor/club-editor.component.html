@@ -1,4 +1,5 @@
-<div>
+<div class="column1">
+  <p class="text">New book club section! </p>
   <form (ngSubmit)="onSubmit()" #myForm="ngForm">
     <mat-form-field >
       <input matInput  placeholder="Club Name" id="firstname" [(ngModel)]= "clubName" name="firstname" >
@@ -13,22 +14,27 @@
     </mat-form-field>
     <br>
     <mat-form-field >
-      <input matInput placeholder="ISBN" id="isbn" [(ngModel)]= "isbn" name="isbn" >
-    </mat-form-field>
-    <br>
-    <mat-form-field >
         <input matInput placeholder="Author" id="lastname" [(ngModel)]= "author" name="author" >
     </mat-form-field>
     <br>
     <mat-form-field>
         <input matInput placeholder="Member(s)" id="members" [(ngModel)]= "members" name="member" [disabled]="true">
     </mat-form-field>
-    <p>
-      <button type="submit" mat-raised-button>Submit</button>
-    </p>
-    <p>
-      <button type="button" mat-raised-button (click)="myForm.reset()">Reset</button>         <!-- Used https://angular.io/guide/forms as a reference for this line -->
+<tr>
+  <td>
+      <p>
+          <button type="submit" mat-raised-button color="primary" >Submit</button> &nbsp;
+        </p>
+  </td>
+  <td>
 
-   </p>
+      <p>
+          <button type="button" mat-raised-button color="warn"  (click)="myForm.reset()">Reset</button>         <!-- Used https://angular.io/guide/forms as a reference for this line -->
+    
+       </p>
+  </td>
+</tr>
+
+ 
   </form>
   </div>

@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { ClubService } from '../club.service';
 import { UserService } from '../user.service'
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-club-editor',
@@ -13,7 +14,6 @@ export class ClubEditorComponent implements OnInit {
   @Input() clubName: string;
   @Input() createdOn;
   @Input() bookTitle: string;
-  @Input() isbn: string;
   @Input() author: string;
   @Input() members;
 
@@ -28,11 +28,11 @@ export class ClubEditorComponent implements OnInit {
 
   onSubmit(){
     if(this.mode == 'add')
-    this._myService.addClubs (this.clubName , this.createdOn, this.bookTitle, this.isbn, this.author, this.members);
+    this._myService.addClubs (this.clubName , this.createdOn, this.bookTitle, this.author, this.members);
     window.location.replace('/listClubs'); //I referred to https://developer.mozilla.org/en-US/docs/Web/API/Location/reload to find this method.
     if(this.mode == 'edit')
     // alert ("Hi");
-    this._myService.updateClub (this.id, this.clubName , this.createdOn, this.bookTitle, this.isbn, this.author, this.members);
+    this._myService.updateClub (this.id, this.clubName , this.createdOn, this.bookTitle, this.author, this.members);
     window.location.replace('/listClubs');
   }
 
@@ -50,7 +50,6 @@ export class ClubEditorComponent implements OnInit {
     this.clubName = x.clubName;
     this.createdOn = x.createdOn;
     this.bookTitle = x.bookTitle;
-    this.isbn = x.isbn;
     this.author = x.author;
     this.members = x.members;
    }

@@ -12,7 +12,18 @@ input[type=text] {
   background-color: rgb(206, 188, 188);
 
 }
+.text
 
+{
+    font-family:'Comic Sans';
+    font-size: medium;
+    font-weight: bold;
+color: darkblue;
+}
+.column1 {
+  float: left;
+ 
+}
 .button {
   background-color: rgb(206, 188, 188);
   border: none;
