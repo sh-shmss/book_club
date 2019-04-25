@@ -34,7 +34,9 @@
 
           </div> -->
 
-          <div>
+          <div class="column1">
+<p class="text"> Fill the form below to add a new user!</p>
+
     <form (ngSubmit)="onSubmit()" #myForm="ngForm">
       <mat-form-field >
         <input matInput  placeholder="First Name" id="firstname" [(ngModel)]=" firstName" name="firstname" >
@@ -63,12 +65,21 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <p>
-        <button type="submit" mat-raised-button>Submit</button>
-      </p>
-      <p>
-        <button type="button" mat-raised-button (click)="myForm.reset()">Reset</button>         <!-- Used https://angular.io/guide/forms as a reference for this line -->
-
-     </p>
+      <tr>
+        <td>
+          <p>
+            <button  mat-raised-button color ="primary">Submit</button>  &nbsp;
+          </p>
+        </td>
+     
+     
+       <td>
+        <p>
+          <button  mat-raised-button color ="warn" (click)="myForm.reset()">Reset</button>         <!-- Used https://angular.io/guide/forms as a reference for this line -->
+  
+       </p>
+       </td>
+     </tr>
+    
     </form>
     </div>
