@@ -1,9 +1,9 @@
-      <div class="row">
+      <div class="column1">
  
         <h3 class="textheader">Welcome to our book club comments section!!</h3>
-      <h3>{{mode}} comments section!</h3>
+     
         <form (ngSubmit)="onSubmit()" #myForm="ngForm">
-  <table>
+
     <tr>
       <td>
           <mat-form-field >
@@ -50,10 +50,10 @@
     </td>
   <td>
             <button (click)="reset()" mat-raised-button
-          color="primary">Cancel</button>   
+          color="warn">Cancel</button>   
   </td>
 </tr>
-</table>
+
            
             </form>
 

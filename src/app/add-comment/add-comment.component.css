@@ -32,6 +32,7 @@ color: darkblue;
     font-weight: bold;
     font-style: italic;
 color: darkblue;
+float: left;
 }
   
   /* Increase the font size of the h1 element */
@@ -49,9 +50,7 @@ color: darkblue;
 
   .column1 {
     float: left;
-    width: 25%;
-    padding: 10px;
-    height: 300px; 
+
   }
   
   
