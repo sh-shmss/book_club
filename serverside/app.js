@@ -217,7 +217,7 @@ const User = require('./models/user')
 const Club = require('./models/club')
 const Event = require('./models/event')
 
-mongoose.connect('mongodb+srv://skasthal:IT_6203db@cluster0-yr7uu.gcp.mongodb.net/bappn', { useNewUrlParser: true })
+mongoose.connect('mongodb+srv://user1:IT_6203sshamsko@cluster0-jqgu7.mongodb.net/IT6203', { useNewUrlParser: true })
   .then(() => { console.log("connected"); })
   .catch(() => { console.log("error connecting"); });
 

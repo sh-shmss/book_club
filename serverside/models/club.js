@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
     clubName:  { type: String, required: true},
     createdOn:  { type: String, required: true},
     bookTitle:  { type: String, required: true},
+    isbn:  { type: String, required: true},
     author:  { type: String, required: true},
     members:  { type: String, required: true},
 
