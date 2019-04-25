@@ -15,4 +15,10 @@ color: darkblue;
     font-weight: bold;
     font-style: italic;
 color: darkblue;
+float: left;
+}
+
+.column1
+{
+    float: left;
 }
