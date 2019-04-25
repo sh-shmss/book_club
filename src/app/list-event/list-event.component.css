@@ -10,6 +10,18 @@ h2{
     font-weight: 400; 
 }
 
+.text
+
+{
+    font-family:'Comic Sans';
+    font-size: larger;
+    font-weight: bold;
+color: darkblue;
+}
+
+.column1{
+    float: left;
+}
 form{
     max-width: 800px;
     margin:10px auto;

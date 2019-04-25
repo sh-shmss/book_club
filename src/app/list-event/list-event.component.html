@@ -1,5 +1,5 @@
-<div> 
-  <h2>View Event Details</h2>
+<div class="column1"> 
+  <h2 class="text">View Event Details</h2>
   <form>
   <ul *ngFor ="let event of events let i = index">
     <li> <label>Event Title: </label>{{event.eventtitle}} 
@@ -15,8 +15,8 @@
       <br/> <label>End Time: </label>{{event.endtime}} 
       <br/> <label>Event Description: </label>{{event.eventdescription}} 
       <br/> <label>Organizer Name: </label> {{event.organizername}}</li>
-    <button mat-button color="warn" (click)="onDelete(event._id)">DELETE</button>
-    <button mat-button color="accent" [routerLink]="['/editEvent', event._id]">UPDATE</button>
+    <button mat-raised-button color="warn" (click)="onDelete(event._id)">DELETE</button> &nbsp;
+    <button mat-raised-button color="primary" [routerLink]="['/editEvent', event._id]">UPDATE</button>
   </ul>
   </form>
 </div>
