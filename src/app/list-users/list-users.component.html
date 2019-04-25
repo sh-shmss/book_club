@@ -11,8 +11,8 @@
           </tr>
                           <ng-container *ngFor ="let user of users let i = index">
           <tr><td>{{user.firstName}}</td> <td>{{user.lastName}}</td> <td>{{user.nickName}}</td><td>{{user.email}}</td><td>{{user.bookClub}}</td>
-            <td><button mat-raised-button (click)="onDelete(user._id)" style="float: right;">DELETE</button></td>
-            <td><button mat-raised-button [routerLink]="['/editUser', user._id]">Udate</button></td></tr>
+            <td><button mat-raised-button color="primary" (click)="onDelete(user._id)" style="float: right;">Delete</button></td>
+            <td><button mat-raised-button color="warn" [routerLink]="['/editUser', user._id]">Update</button></td></tr>
         </ng-container>
       </tbody>
     </table>
