@@ -1,0 +1,60 @@
+
+.navlinks mat-toolbar-row {
+  background-color: skyblue;
+        color:black;
+    justify-content: space-between;
+    overflow-x: auto; 
+    cursor: pointer;
+
+    span {
+        padding: 4px 1em;
+        text-transform: capitalize;
+        outline: none;
+        cursor: pointer;
+        flex: 0 0 16.6666667%;
+        flex-direction: column;
+        display: flex;
+        align-items: center;
+        background: #4c5f76;
+        margin: 4px 0;
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 18px;
+
+        mat-icon{
+            vertical-align: sub;
+        }
+    }
+}
+
+.navbar {
+    button {
+        outline: none;
+    }
+
+    background: #041f54;
+    color: #fff;
+
+    .navbar-toggler-icon {
+   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+     
+    }
+
+    .navbar-toggler {
+        border: 0;
+    }
+}
+mat-list-item {
+    cursor: pointer;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+.active {
+    background: rgba(236, 236, 247, 0.5);
+    color:darkblue;
+
+}
+

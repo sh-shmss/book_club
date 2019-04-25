@@ -1,9 +1,9 @@
 <div>
-    <button mat-icon-button [matMenuTriggerFor]="menu">
+    <!-- <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>expand_more</mat-icon>
       <span>Menu</span>
-    </button>
-
+    </button> -->
+<!-- 
     <mat-menu #menu="matMenu">
       <button mat-menu-item routerLink = "/listUsers" >
         <span>List Users</span>
@@ -31,5 +31,63 @@
       <span>Add Event</span>
     </button>
 
+    </mat-menu> -->
+
+<mat-toolbar class="navlinks">
+    <mat-toolbar-row>
+
+  <span [matMenuTriggerFor]="bookmenu">
+    <mat-icon matListIcon>home</mat-icon> Book Clubs
+</span>
+    <mat-menu #bookmenu="matMenu" class="book-menu">
+        <button mat-menu-item routerLink = "/listUsers" routerLinkActive="active">List of Users</button>
+        <button mat-menu-item routerLink ="/addUser" routerLinkActive="active">Add a New User</button>
+        <button mat-menu-item routerLink ="/listClubs" routerLinkActive="active">List Clubs</button>
+        <button mat-menu-item routerLink ="/addClub" routerLinkActive="active">Add a New Club</button>
     </mat-menu>
+ 
+    <span [matMenuTriggerFor]="dismenu">
+      <mat-icon matListIcon>library_books</mat-icon> Discussion Board
+  </span>
+      <mat-menu #dismenu="matMenu" class="dis-menu">
+          <button mat-menu-item routerLink = "/addcomment" routerLinkActive="active">Submit Comments</button>
+          <button mat-menu-item routerLink ="/view" routerLinkActive="active">View Comments</button>
+ 
+      </mat-menu>
+
+      <span [matMenuTriggerFor]="votemenu">
+        <mat-icon matListIcon>favorite_border</mat-icon> Suggest/Vote
+    </span>
+        <mat-menu #votemenu="matMenu" class="vote-menu">
+            <button mat-menu-item routerLink = "/add-book" routerLinkActive="active">Suggest Book</button>
+            <button mat-menu-item routerLink ="/vote-book" routerLinkActive="active">Vote</button>
+   
+        </mat-menu>
+
+      <span [matMenuTriggerFor]="eventmenu">
+        <mat-icon matListIcon>event</mat-icon> Event Board
+    </span>
+        <mat-menu #eventmenu="matMenu" class="event-menu">
+            <button mat-menu-item routerLink = "/listEvent" routerLinkActive="active">View Events</button>
+            <button mat-menu-item routerLink ="/addEvent" routerLinkActive="active">Add Event</button>
+   
+        </mat-menu>
+
+        <span [matMenuTriggerFor]="booklistmenu">
+          <mat-icon matListIcon>library_books</mat-icon> Book List
+      </span>
+          <mat-menu #booklistmenu="matMenu" class="booklist-menu">
+              <button mat-menu-item routerLink = "/books" routerLinkActive="active">Book List</button>
+           
+          </mat-menu>
+  
+
+
+        
+    </mat-toolbar-row>
+</mat-toolbar>
+   
     </div>
+
+  
+   
