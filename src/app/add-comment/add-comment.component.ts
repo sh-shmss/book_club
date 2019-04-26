@@ -15,9 +15,11 @@ export class AddCommentComponent implements OnInit {
   @Input() comment: string;
 
   public x;
+  public clubs;
+
   private mode = 'add';
   private id: string;
-  constructor(private _myService: CommentService, private _myService2: ClubService,private router: Router, public route: ActivatedRoute) { }
+  constructor(private _myService: CommentService, private _myService2: ClubService, private router: Router, public route: ActivatedRoute) { }
   onSubmit(){
  if(this.mode == 'add')
 this._myService.addComments(this.firstName ,this.lastName,this.bookname,this.comment);

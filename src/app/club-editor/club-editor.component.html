@@ -2,23 +2,27 @@
   <p class="text">New book club section! </p>
   <form (ngSubmit)="onSubmit()" #myForm="ngForm">
     <mat-form-field >
-      <input matInput  placeholder="Club Name" id="firstname" [(ngModel)]= "clubName" name="firstname" >
+      <input matInput  placeholder="Club Name" id="clubName" [(ngModel)]= "clubName" name="clubName" >
     </mat-form-field>
     <br>
     <mat-form-field >
-      <input matInput placeholder="Created on" id="lastname" [(ngModel)]= "createdOn" name="lastname" [disabled]="true">
+      <input matInput placeholder="Created on" id="createdOn" [(ngModel)]= "createdOn" name="lastname" [disabled]="true">
     </mat-form-field>
     <br>
     <mat-form-field >
-        <input matInput placeholder="Book Title" id="nickname" [(ngModel)]= "bookTitle" name="booktitle" >
+        <input matInput placeholder="Book Title" id="bookTitle" [(ngModel)]= "bookTitle" name="booktitle" >
     </mat-form-field>
     <br>
     <mat-form-field >
-        <input matInput placeholder="Author" id="lastname" [(ngModel)]= "author" name="author" >
+      <input matInput placeholder="ISBN" id="isbn" [(ngModel)]= "isbn" name="isbn" >
+  </mat-form-field>
+  <br>
+    <mat-form-field >
+        <input matInput placeholder="Author" id="author" [(ngModel)]= "author" name="author" >
     </mat-form-field>
     <br>
     <mat-form-field>
-        <input matInput placeholder="Member(s)" id="members" [(ngModel)]= "members" name="member" [disabled]="true">
+        <input matInput placeholder="Member(s)" id="members" [(ngModel)]= "members" name="members" [disabled]="true">
     </mat-form-field>
 <tr>
   <td>
@@ -30,11 +34,11 @@
 
       <p>
           <button type="button" mat-raised-button color="warn"  (click)="myForm.reset()">Reset</button>         <!-- Used https://angular.io/guide/forms as a reference for this line -->
-    
+
        </p>
   </td>
 </tr>
 
- 
+
   </form>
   </div>

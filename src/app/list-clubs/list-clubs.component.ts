@@ -28,7 +28,7 @@ export class ListClubsComponent implements OnInit {
       // xhttp.send();
 
 
-      document.getElementById("demo").src = "https://www.goodreads.com/api/reviews_widget_iframe?did=DEVELOPER_ID&amp;format=html&amp;isbn=" + x + "&amp;links=660&amp;min_rating=&amp;review_back=fff&amp;stars=000&amp;text=000";
+      document.getElementById("demo").setAttribute ("src", "https://www.goodreads.com/api/reviews_widget_iframe?did=DEVELOPER_ID&amp;format=html&amp;isbn=" + x + "&amp;links=660&amp;min_rating=&amp;review_back=fff&amp;stars=000&amp;text=000");
       document.getElementById("demo_div").style.display = "block";
 
 

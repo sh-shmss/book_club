@@ -30,11 +30,11 @@ export class ClubEditorComponent implements OnInit {
 
   onSubmit(){
     if(this.mode == 'add')
-    this._myService.addClubs (this.clubName , this.createdOn, this.bookTitle, this.author, this.members, this.isbn);
+    this._myService.addClubs (this.clubName , this.createdOn, this.bookTitle, this.isbn, this.author, this.members);
     window.location.replace('/listClubs'); //I referred to https://developer.mozilla.org/en-US/docs/Web/API/Location/reload to find this method.
     if(this.mode == 'edit')
     // alert ("Hi");
-    this._myService.updateClub (this.id, this.clubName , this.createdOn, this.bookTitle, this.author, this.members,this.isbn);
+    this._myService.updateClub (this.id, this.clubName , this.createdOn, this.bookTitle, this.isbn, this.author, this.members);
     window.location.replace('/listClubs');
   }
 
@@ -52,6 +52,7 @@ export class ClubEditorComponent implements OnInit {
     this.clubName = x.clubName;
     this.createdOn = x.createdOn;
     this.bookTitle = x.bookTitle;
+    this.isbn = x.isbn;
     this.author = x.author;
     this.members = x.members;
    }
