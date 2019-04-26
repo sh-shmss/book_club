@@ -1,7 +1,7 @@
       <div class="column1">
- 
+
         <h3 class="textheader">Welcome to our book club comments section!!</h3>
-     
+
         <form (ngSubmit)="onSubmit()" #myForm="ngForm">
 
     <tr>
@@ -11,34 +11,43 @@
               [(ngModel)]=" firstName" name="firstname" >
               </mat-form-field>
       </td>
-    </tr> 
+    </tr>
     <tr>
       <td>
-          
+
               <mat-form-field >
                   <input matInput placeholder="Last Name" id="lastname" [(ngModel)]="
                   lastName" name="lastname" >
-              </mat-form-field>   
+              </mat-form-field>
       </td>
-    </tr>    
+    </tr>
     <tr>
         <td>
-            
-                <mat-form-field >
+
+                <!-- <mat-form-field >
                     <input matInput placeholder="Name of the Book" id="bookname" [(ngModel)]="
                     bookname" name="bookname" >
-                       
-                    </mat-form-field>             
+
+                    </mat-form-field>              -->
+                    <mat-form-field >
+                    <mat-select [(ngModel)]="bookname" matInput placeholder="Name of the Book" [ngModelOptions]="{standalone: true}">
+                      <mat-option *ngFor="let club of clubs let i = index" [value]="club.bookTitle">
+                        {{club.bookTitle}}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field>
+
+
         </td>
       </tr>
   <tr>
         <td>
-            
+
                 <mat-form-field class="textarea" >
                     <textarea matInput placeholder="Enter your Comments" id="comment" [(ngModel)]="
                     comment" name="comment"  ></textarea>
                     </mat-form-field>
-            
+
         </td>
       </tr>
 <tr>
@@ -50,16 +59,15 @@
     </td>
   <td>
             <button (click)="reset()" mat-raised-button
-          color="warn">Cancel</button>   
+          color="warn">Cancel</button>
   </td>
 </tr>
 
-           
+
             </form>
 
       </div>
 
-      
-    
-     
-        
+
+
+
