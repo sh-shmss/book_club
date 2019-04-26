@@ -1,3 +1,5 @@
+
+
 <div>
   <table id= "users">
     <tbody>
@@ -5,16 +7,23 @@
             <th>Club Name</th>
             <th>Created on</th>
             <th>Book Title</th>
+            <th>ISBN</th>
             <th>Author</th>
             <th>Members</th>
+            <th>Goodreads Reviews</th>
             <th colspan="2">Action</th>
         </tr>
         <ng-container *ngFor ="let club of clubs let i = index">
-        <tr><td>{{club.clubName}}</td> <td>{{club.createdOn}}</td> <td>{{club.bookTitle}}</td><td>{{club.author}}</td><td>{{club.members}}</td>
-          <td><button mat-raised-button  color ="warn" (click)="onDelete(club._id)" style="float: right;">Delete</button></td>
-          <td><button mat-raised-button color ="primary" [routerLink]="['/editClub', club._id]">Update</button></td></tr>
-      </ng-container>
+        <tr><td>{{club.clubName}}</td> <td>{{club.createdOn}}</td> <td>{{club.bookTitle}}</td><td>{{club.isbn}}</td>
+          <td>{{club.author}}</td><td>{{club.members}}</td>  <td><button mat-raised-button (click)="myCallback(club.isbn)" style="float: right;">See reviews</button></td>
+
+          <td><button mat-raised-button (click)="onDelete(club._id)" style="float: right;">DELETE</button></td>
+          <td><button mat-raised-button [routerLink]="['/editClub', club._id]">Udate</button></td>
+        </ng-container>
     </tbody>
   </table>
-</div>
 
+  <div id = "demo_div" style="display:none;">
+  <iframe id="demo" src="" style="border:none; width: 100%; height:300px;">
+  </iframe>
+</div>

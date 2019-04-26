@@ -3,7 +3,7 @@
       <mat-icon>expand_more</mat-icon>
       <span>Menu</span>
     </button> -->
-<!-- 
+<!--
     <mat-menu #menu="matMenu">
       <button mat-menu-item routerLink = "/listUsers" >
         <span>List Users</span>
@@ -45,14 +45,14 @@
         <button mat-menu-item routerLink ="/listClubs" routerLinkActive="active">List Clubs</button>
         <button mat-menu-item routerLink ="/addClub" routerLinkActive="active">Add a New Club</button>
     </mat-menu>
- 
+
     <span [matMenuTriggerFor]="dismenu">
       <mat-icon matListIcon>library_books</mat-icon> Discussion Board
   </span>
       <mat-menu #dismenu="matMenu" class="dis-menu">
           <button mat-menu-item routerLink = "/addcomment" routerLinkActive="active">Submit Comments</button>
           <button mat-menu-item routerLink ="/view" routerLinkActive="active">View Comments</button>
- 
+
       </mat-menu>
 
       <span [matMenuTriggerFor]="votemenu">
@@ -61,7 +61,7 @@
         <mat-menu #votemenu="matMenu" class="vote-menu">
             <button mat-menu-item routerLink = "/add-book" routerLinkActive="active">Suggest Book</button>
             <button mat-menu-item routerLink ="/vote-book" routerLinkActive="active">Vote</button>
-   
+
         </mat-menu>
 
       <span [matMenuTriggerFor]="eventmenu">
@@ -70,24 +70,23 @@
         <mat-menu #eventmenu="matMenu" class="event-menu">
             <button mat-menu-item routerLink = "/listEvent" routerLinkActive="active">View Events</button>
             <button mat-menu-item routerLink ="/addEvent" routerLinkActive="active">Add Event</button>
-   
+
         </mat-menu>
 
-        <span [matMenuTriggerFor]="booklistmenu">
+        <!-- <span [matMenuTriggerFor]="booklistmenu">
           <mat-icon matListIcon>library_books</mat-icon> Book List
-      </span>
+      </span> -->
           <mat-menu #booklistmenu="matMenu" class="booklist-menu">
               <button mat-menu-item routerLink = "/books" routerLinkActive="active">Book List</button>
-           
+
           </mat-menu>
-  
 
 
-        
+
+
     </mat-toolbar-row>
 </mat-toolbar>
-   
+
     </div>
 
-  
-   
+

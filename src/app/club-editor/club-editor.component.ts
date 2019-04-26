@@ -16,6 +16,8 @@ export class ClubEditorComponent implements OnInit {
   @Input() bookTitle: string;
   @Input() author: string;
   @Input() members;
+  @Input() isbn;
+
 
   current_date = new Date(); // Copied from https://angular.io/guide/pipes
 
@@ -28,11 +30,11 @@ export class ClubEditorComponent implements OnInit {
 
   onSubmit(){
     if(this.mode == 'add')
-    this._myService.addClubs (this.clubName , this.createdOn, this.bookTitle, this.author, this.members);
+    this._myService.addClubs (this.clubName , this.createdOn, this.bookTitle, this.author, this.members, this.isbn);
     window.location.replace('/listClubs'); //I referred to https://developer.mozilla.org/en-US/docs/Web/API/Location/reload to find this method.
     if(this.mode == 'edit')
     // alert ("Hi");
-    this._myService.updateClub (this.id, this.clubName , this.createdOn, this.bookTitle, this.author, this.members);
+    this._myService.updateClub (this.id, this.clubName , this.createdOn, this.bookTitle, this.author, this.members,this.isbn);
     window.location.replace('/listClubs');
   }
 

@@ -23,6 +23,8 @@ import { AddCommentComponent } from './add-comment/add-comment.component';
 import { ViewcommentComponent } from './viewcomment/viewcomment.component';
 import { ListEventComponent } from './list-event/list-event.component';
 import { EventformComponent } from './eventform/eventform.component';
+import {MatToolbarModule} from '@angular/material/toolbar';
+
 
 
 const appRoutes: Routes = [ {
@@ -104,6 +106,7 @@ const appRoutes: Routes = [ {
     BrowserAnimationsModule,
     MatMenuModule,
     MatIconModule,
+    MatToolbarModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [UserService,ClubService],
