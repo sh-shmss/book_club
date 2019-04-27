@@ -8,7 +8,7 @@ import { NameEditorComponent } from './name-editor/name-editor.component';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './user.service';
 
-import { MatFormFieldModule } from '@angular/material';
+import { MatFormFieldModule, MatDatepickerModule, MatNativeDateModule } from '@angular/material';
 import { MatInputModule, MatButtonModule, MatMenuModule, MatIconModule } from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavigationMenuComponent } from './navigation-menu/navigation-menu.component';
@@ -107,6 +107,9 @@ const appRoutes: Routes = [ {
     MatMenuModule,
     MatIconModule,
     MatToolbarModule,
+    MatButtonModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
     RouterModule.forRoot(appRoutes)
   ],
   providers: [UserService,ClubService],
