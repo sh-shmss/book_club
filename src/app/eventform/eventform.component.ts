@@ -29,8 +29,9 @@ export class EventformComponent implements OnInit {
   private mode = 'Add';
   private id: string;
   public x;
-  public y; 
+  public y;
   public clubs;
+  public Events;
 
 
   constructor(private _myService : EventService, private _myService2: ClubService, private router:Router, public route: ActivatedRoute ) { }
@@ -39,7 +40,7 @@ export class EventformComponent implements OnInit {
     console.log("You submitted: " + this.eventtitle + " " + this.eventurl + " " + this.street + " " + this.city + " " + this.state + " " + this.zip + " " + this.country +  " " + this.startdate + " " + this.starttime + " " + this.enddate + " " + this.endtime + " " + this.eventdescribe + " " + this.organizername );
     if(this.mode == 'Add')
       this._myService.addEvents(this.eventtitle, this.eventurl, this.street, this.city, this.state, this.zip, this.country, this.startdate, this.starttime, this.enddate, this.endtime, this.eventdescribe, this.organizername);
-      window.location.replace('/listEvent'); 
+      window.location.replace('/listEvent');
     if(this.mode == 'Edit')
       this._myService.updateEvent(this.id, this.eventtitle, this.eventurl, this.street, this.city, this.state, this.zip, this.country, this.startdate, this.starttime, this.enddate, this.endtime, this.eventdescribe, this.organizername);
     window.location.replace('/listEvent');
@@ -62,13 +63,13 @@ export class EventformComponent implements OnInit {
   this.city = x.city;
   this.state = x.state;
   this.zip = x.zip;
-  this.country = x.country; 
+  this.country = x.country;
   this.startdate = x.startdate;
   this.starttime = x.starttime;
   this.enddate = x.enddate;
   this.endtime = x.endtime;
   this.eventdescribe = x.eventdescribe;
-  this.organizername = x.organizername; 
+  this.organizername = x.organizername;
  }
 
 
@@ -90,16 +91,16 @@ export class EventformComponent implements OnInit {
           this.id = null; }
     });
 
-  
+
     this.x = this._myService.getEvents();
     this._myService.getEvents().subscribe(
       data => { this.Events = data},
-      err => console.error(err), 
+      err => console.error(err),
       //() => console.log ('Events loaded')
       () => this.myFunction5(this.Events[this.myFunction4(this.Events)])
     );
 
   }
-  
+
 
 }
