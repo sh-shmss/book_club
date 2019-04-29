@@ -1,19 +1,20 @@
-<div class="column1"> 
+<div class="column1">
   <h2 class="text">View Event Details</h2>
   <form>
   <ul *ngFor ="let event of events let i = index">
-    <li> <label>Event Title: </label>{{event.eventtitle}} 
-      <br/> <label>Event URL: </label>{{event.eventurl}} 
-      <br/> <label>Street: </label>{{event.street}} 
-      <br/> <label>City: </label>{{event.city}} 
-      <br/> <label>State: </label>{{event.state}} 
-      <br/> <label>Zip: </label>{{event.zip}} 
-      <br/> <label>Country: </label>{{event.country}} 
-      <br/> <label>Start Date: </label>{{event.startdate}} 
-      <br/> <label>Start Time: </label>{{event.starttime}} 
-      <br/> <label>End Date: </label>{{event.enddate}} 
-      <br/> <label>End Time: </label>{{event.endtime}} 
-      <br/> <label>Event Description: </label>{{event.eventdescription}} 
+    <li> <label>Event Title: </label>{{event.eventtitle}}
+      <br/> <label>Book Title: </label>{{event.booktitle}}
+      <br/> <label>Event URL: </label>{{event.eventurl}}
+      <br/> <label>Street: </label>{{event.street}}
+      <br/> <label>City: </label>{{event.city}}
+      <br/> <label>State: </label>{{event.state}}
+      <br/> <label>Zip: </label>{{event.zip}}
+      <br/> <label>Country: </label>{{event.country}}
+      <br/> <label>Start Date: </label>{{event.startdate}}
+      <br/> <label>Start Time: </label>{{event.starttime}}
+      <br/> <label>End Date: </label>{{event.enddate}}
+      <br/> <label>End Time: </label>{{event.endtime}}
+      <br/> <label>Event Description: </label>{{event.eventdescription}}
       <br/> <label>Organizer Name: </label> {{event.organizername}}</li>
     <button mat-raised-button color="warn" (click)="onDelete(event._id)">DELETE</button> &nbsp;
     <button mat-raised-button color="primary" [routerLink]="['/editEvent', event._id]">UPDATE</button>

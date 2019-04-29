@@ -447,6 +447,7 @@ app.use(bodyParser.json())
 app.post('/events', (req, res, next) => {
   // create a new event variable and save request’s fields
   const event = new Event({
+    booktitle: req.body.booktitle,
     eventtitle: req.body.eventtitle,
     eventurl: req.body.eventurl,
     street: req.body.street,
@@ -487,7 +488,9 @@ app.put('/events/:id', (req, res, next) => {
   if (mongoose.Types.ObjectId.isValid(req.params.id)) {
     //find a document and set new first and last names
     Event.findOneAndUpdate({_id: req.params.id},
-      {$set:{eventtitle : req.body.eventtitle,
+      {$set:{
+        booktitle : req.body.booktitle,
+        eventtitle : req.body.eventtitle,
         eventurl : req.body.eventurl,
         street: req.body.street,
         city: req.body.city,

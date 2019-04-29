@@ -12,6 +12,7 @@ import { ClubService } from '../club.service';
 })
 export class EventformComponent implements OnInit {
 
+  @Input() booktitle: string;
   @Input() eventtitle: string;
   @Input() eventurl: string;
   @Input() street: string;
@@ -26,10 +27,9 @@ export class EventformComponent implements OnInit {
   @Input() eventdescribe: string;
   @Input() organizername: string;
 
-  private mode = 'Add';
+  private mode = 'add';
   private id: string;
   public x;
-  public y;
   public clubs;
   public Events;
 
@@ -37,12 +37,12 @@ export class EventformComponent implements OnInit {
   constructor(private _myService : EventService, private _myService2: ClubService, private router:Router, public route: ActivatedRoute ) { }
 
   onSubmit(){
-    console.log("You submitted: " + this.eventtitle + " " + this.eventurl + " " + this.street + " " + this.city + " " + this.state + " " + this.zip + " " + this.country +  " " + this.startdate + " " + this.starttime + " " + this.enddate + " " + this.endtime + " " + this.eventdescribe + " " + this.organizername );
-    if(this.mode == 'Add')
-      this._myService.addEvents(this.eventtitle, this.eventurl, this.street, this.city, this.state, this.zip, this.country, this.startdate, this.starttime, this.enddate, this.endtime, this.eventdescribe, this.organizername);
+    console.log("You submitted: " + this.booktitle + " " + this.eventtitle + " " + this.eventurl + " " + this.street + " " + this.city + " " + this.state + " " + this.zip + " " + this.country +  " " + this.startdate + " " + this.starttime + " " + this.enddate + " " + this.endtime + " " + this.eventdescribe + " " + this.organizername );
+    if(this.mode == 'add')
+      this._myService.addEvents(this.booktitle, this.eventtitle, this.eventurl, this.street, this.city, this.state, this.zip, this.country, this.startdate, this.starttime, this.enddate, this.endtime, this.eventdescribe, this.organizername);
       window.location.replace('/listEvent');
-    if(this.mode == 'Edit')
-      this._myService.updateEvent(this.id, this.eventtitle, this.eventurl, this.street, this.city, this.state, this.zip, this.country, this.startdate, this.starttime, this.enddate, this.endtime, this.eventdescribe, this.organizername);
+    if(this.mode == 'edit')
+      this._myService.updateEvent(this.id, this.booktitle, this.eventtitle, this.eventurl, this.street, this.city, this.state, this.zip, this.country, this.startdate, this.starttime, this.enddate, this.endtime, this.eventdescribe, this.organizername);
     window.location.replace('/listEvent');
   }
 
@@ -57,6 +57,7 @@ export class EventformComponent implements OnInit {
 
  myFunction5(x){
   //  console.log (x)
+  this.booktitle = x.booktitle;
   this.eventtitle = x.eventtitle;
   this.eventurl = x.eventurl;
   this.street = x.street;
@@ -85,13 +86,16 @@ export class EventformComponent implements OnInit {
 
     this.route.paramMap.subscribe((paramMap: ParamMap ) => {
       if (paramMap.has('_id'))
-        { this.mode = 'Edit'; /*request had a parameter _id */
+        { this.mode = 'edit'; /*request had a parameter _id */
           this.id = paramMap.get('_id');}
-      else {this.mode = 'Add';
+      else {this.mode = 'add';
           this.id = null; }
     });
+  this.getEvents();
 
 
+    if (this.mode == 'edit') {
+    console.log("edit")
     this.x = this._myService.getEvents();
     this._myService.getEvents().subscribe(
       data => { this.Events = data},
@@ -104,3 +108,18 @@ export class EventformComponent implements OnInit {
 
 
 }
+
+getEvents() {
+  this._myService.getEvents().subscribe(
+  //read data and assign to public variable students
+  data => { this.Events = data},
+  err => console.error(err),
+  () => console.log('finished loading')
+  );
+  }
+
+
+}
+
+
+

@@ -19,8 +19,8 @@ export class EventService {
     }
 
     // Uses http.post() to post data
-    addEvents(eventtitle: string, eventurl: string, street: string, city: string, state: string, zip: number, country: string, startdate: number, starttime: number, enddate: number, endtime: number, eventdescription: string, organizername: string) {
-        this.http.post('http://localhost:8000/events',{ eventtitle, eventurl, street, city, state, zip, country, startdate, starttime, enddate, endtime, eventdescription, organizername })
+    addEvents(booktitle: string, eventtitle: string, eventurl: string, street: string, city: string, state: string, zip: number, country: string, startdate: number, starttime: number, enddate: number, endtime: number, eventdescription: string, organizername: string) {
+        this.http.post('http://localhost:8000/events',{ booktitle, eventtitle, eventurl, street, city, state, zip, country, startdate, starttime, enddate, endtime, eventdescription, organizername })
         .subscribe((responseData) => {
             console.log(responseData);
         });
@@ -37,11 +37,11 @@ export class EventService {
         location.reload();
       }
 
-      updateEvent(eventId: string, eventtitle: string, eventurl: string, street: string, city: string, state: string, zip: number, country: string, startdate: number, starttime: number, enddate: number, endtime: number, eventdescription: string, organizername: string) {
+      updateEvent(eventId: string, booktitle, eventtitle: string, eventurl: string, street: string, city: string, state: string, zip: number, country: string, startdate: number, starttime: number, enddate: number, endtime: number, eventdescription: string, organizername: string) {
         //request path http://localhost:8000/students/5xbd456xx
         //first and last names will be send as HTTP body parameters
             this.http.put("http://localhost:8000/events/"
-                 + eventId,{ eventtitle, eventurl, street, city, state, zip, country, startdate, starttime, enddate, endtime, eventdescription, organizername })
+                 + eventId,{ booktitle, eventtitle, eventurl, street, city, state, zip, country, startdate, starttime, enddate, endtime, eventdescription, organizername })
               .subscribe(() => {
                   console.log('Updated: ' + eventId);
               });

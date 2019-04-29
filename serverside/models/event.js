@@ -2,6 +2,7 @@ const mongoose = require('mongoose');
 
 //define a schema/ blueprint NOTE: id is not a part of the schema
   const eventSchema = new mongoose.Schema({
+    booktitle:  { type: String, required: true},
     eventtitle:  { type: String, required: true},
     eventurl:  { type: String, required: false},
     street: {type: String, required: true},
