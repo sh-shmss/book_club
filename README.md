@@ -1,3 +1,5 @@
+## A wep application developed using MEAN stack to manage book clubs.
+
 # MeanTest
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.3.
