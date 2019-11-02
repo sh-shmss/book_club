@@ -24,7 +24,7 @@
     "@material/toolbar": "^1.1.0",
     "core-js": "^2.5.4",
     "material-design-icons": "^3.0.1",
-    "mongoose": "^5.4.19",
+    "mongoose": "^5.7.5",
     "rxjs": "~6.3.3",
     "tslib": "^1.9.0",
     "zone.js": "~0.8.26"
